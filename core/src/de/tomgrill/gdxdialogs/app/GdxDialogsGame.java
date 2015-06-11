@@ -210,9 +210,9 @@ public class GdxDialogsGame extends ApplicationAdapter {
 			}
 		});
 
-		bDialog.addButton("No");
-		bDialog.addButton("Never");
 		bDialog.addButton("Yes, nomnom!");
+		bDialog.addButton("No");
+		bDialog.addButton("Later");
 
 		bDialog.build().show();
 
@@ -258,8 +258,8 @@ public class GdxDialogsGame extends ApplicationAdapter {
 			}
 		});
 
-		bDialog.addButton("Wrong");
 		bDialog.addButton("Correct!");
+		bDialog.addButton("Wrong");
 
 		bDialog.build().show();
 
