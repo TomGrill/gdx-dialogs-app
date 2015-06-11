@@ -6,6 +6,7 @@ https://github.com/TomGrill/gdx-dialogs
 ##Get it running
 
 **General**
+
 Import project to your IDE
 
 You should be good to go.
