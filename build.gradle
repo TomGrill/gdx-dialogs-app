@@ -23,9 +23,12 @@ allprojects {
         box2DLightsVersion = '1.3'
         ashleyVersion = '1.4.0'
         aiVersion = '1.5.0'
+        
+        gdxDialogsVersion = '0.1.0-SNAPSHOT'
     }
 
     repositories {
+        mavenLocal()
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
@@ -40,6 +43,9 @@ project(":desktop") {
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+        
+
+        compile "de.tomgrill.gdxdialogs:gdx-dialogs-desktop:$gdxDialogsVersion"
     }
 }
 
@@ -54,6 +60,10 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        
+        compile "de.tomgrill.gdxdialogs:gdx-dialogs-android:$gdxDialogsVersion"
+        
+        
     }
 }
 
@@ -68,6 +78,8 @@ project(":ios") {
         compile "org.robovm:robovm-cocoatouch:$roboVMVersion"
         compile "com.badlogicgames.gdx:gdx-backend-robovm:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
+        
+        compile "de.tomgrill.gdxdialogs:gdx-dialogs-ios:$gdxDialogsVersion"
     }
 }
 
@@ -90,6 +102,8 @@ project(":core") {
 
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+        
+        compile "de.tomgrill.gdxdialogs:gdx-dialogs-core:$gdxDialogsVersion"
     }
 }
 
