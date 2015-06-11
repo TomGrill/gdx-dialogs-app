@@ -112,7 +112,7 @@ public class GdxDialogsGame extends ApplicationAdapter {
 		TextPrompt textPrompt = dManager.newTextPrompt();
 
 		textPrompt.setTitle("Your name");
-		textPrompt.setMessage("Pleas tell me your name.");
+		textPrompt.setMessage("Please tell me your name.");
 
 		textPrompt.setCancelButtonLabel("Cancel");
 		textPrompt.setConfirmButtonLabel("Save name");
@@ -126,7 +126,7 @@ public class GdxDialogsGame extends ApplicationAdapter {
 
 			@Override
 			public void cancel() {
-				textPromptFontActor.setText("Common, tell me your name pleas :)");
+				textPromptFontActor.setText("Common, tell me your name please :)");
 			}
 		});
 
