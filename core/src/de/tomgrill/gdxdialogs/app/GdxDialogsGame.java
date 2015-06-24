@@ -317,8 +317,9 @@ public class GdxDialogsGame extends ApplicationAdapter {
 		stage.act();
 		stage.draw();
 
-		if (showProgressUntilTime < TimeUtils.millis()) {
+		if (showProgressUntilTime < TimeUtils.millis() && showProgressUntilTime != 0) {
 			if (progressDialog != null) {
+				showProgressUntilTime = 0;
 				progressDialog.dismiss();
 			}
 		}
