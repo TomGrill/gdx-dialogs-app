@@ -17,11 +17,11 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 import de.tomgrill.gdxdialogs.app.actors.BitmapFontActor;
 import de.tomgrill.gdxdialogs.app.actors.ButtonActor;
-import de.tomgrill.gdxdialogs.core.DialogManager;
-import de.tomgrill.gdxdialogs.core.DialogSystem;
-import de.tomgrill.gdxdialogs.core.dialogs.ButtonDialog;
-import de.tomgrill.gdxdialogs.core.dialogs.ProgressDialog;
-import de.tomgrill.gdxdialogs.core.dialogs.TextPrompt;
+import de.tomgrill.gdxdialogs.core.GDXDialogs;
+import de.tomgrill.gdxdialogs.core.GDXDialogsSystem;
+import de.tomgrill.gdxdialogs.core.dialogs.GDXButtonDialog;
+import de.tomgrill.gdxdialogs.core.dialogs.GDXProgressDialog;
+import de.tomgrill.gdxdialogs.core.dialogs.GDXTextPrompt;
 import de.tomgrill.gdxdialogs.core.listener.ButtonClickListener;
 import de.tomgrill.gdxdialogs.core.listener.TextPromptListener;
 
@@ -36,14 +36,14 @@ public class GdxDialogsGame extends ApplicationAdapter {
 	private ButtonActor progressButtonActor;
 	private ButtonActor textPromptButtonActor;
 
-	private DialogManager dManager;
+	private GDXDialogs dManager;
 
 	private BitmapFontActor buttonClickedFontActor;
 	private BitmapFontActor textPromptFontActor;
 
 	private long showProgressUntilTime;
 
-	private ProgressDialog progressDialog;
+	private GDXProgressDialog progressDialog;
 
 	@Override
 	public void create() {
@@ -53,8 +53,7 @@ public class GdxDialogsGame extends ApplicationAdapter {
 		stage = new Stage(new ExtendViewport(640, 800, 640, 800));
 		Gdx.input.setInputProcessor(stage);
 
-		DialogSystem dSystem = new DialogSystem();
-		dManager = dSystem.getDialogManager();
+		dManager = GDXDialogsSystem.install();
 
 		BitmapFont font = new BitmapFont();
 		font.setColor(Color.BLACK);
@@ -109,7 +108,7 @@ public class GdxDialogsGame extends ApplicationAdapter {
 	}
 
 	private void showANewTextPromptsDialog() {
-		TextPrompt textPrompt = dManager.newTextPrompt();
+		GDXTextPrompt textPrompt = dManager.newDialog(GDXTextPrompt.class);
 
 		textPrompt.setTitle("Your name");
 		textPrompt.setMessage("Please tell me your name.");
@@ -160,7 +159,7 @@ public class GdxDialogsGame extends ApplicationAdapter {
 	}
 
 	private void showANewProgressDialog() {
-		progressDialog = dManager.newProgressDialog();
+		progressDialog = dManager.newDialog(GDXProgressDialog.class);
 
 		progressDialog.setTitle("Download");
 		progressDialog.setMessage("Loading new level from server...");
@@ -196,7 +195,7 @@ public class GdxDialogsGame extends ApplicationAdapter {
 	}
 
 	private void showANewTrippleButtonDialog() {
-		ButtonDialog bDialog = dManager.newButtonDialog();
+		GDXButtonDialog bDialog = dManager.newDialog(GDXButtonDialog.class);
 
 		bDialog.setTitle("Buy a item");
 		bDialog.setMessage("Do you want to buy the mozarella?");
@@ -244,7 +243,7 @@ public class GdxDialogsGame extends ApplicationAdapter {
 	}
 
 	private void showANewDoubleButtonDialog() {
-		ButtonDialog bDialog = dManager.newButtonDialog();
+		GDXButtonDialog bDialog = dManager.newDialog(GDXButtonDialog.class);
 
 		bDialog.setTitle("Am i right?");
 		bDialog.setMessage("Your age is 29!");
@@ -290,7 +289,7 @@ public class GdxDialogsGame extends ApplicationAdapter {
 	}
 
 	private void showANewSingleButtonDialog() {
-		ButtonDialog bDialog = dManager.newButtonDialog();
+		GDXButtonDialog bDialog = dManager.newDialog(GDXButtonDialog.class);
 
 		bDialog.setTitle("Do you like me?");
 		bDialog.setMessage("I'am a single button. Do you like that?");
