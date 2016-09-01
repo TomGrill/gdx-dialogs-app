@@ -9,7 +9,7 @@ buildscript {
     dependencies {
         classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
         classpath 'com.android.tools.build:gradle:2.0.0'
-        classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.1.0'
+        classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.2.0'
         classpath 'com.intel.gradle:moeGradlePlugin:1.1.0.final-1'
     }
 }
@@ -21,8 +21,8 @@ allprojects {
     version = '1.0'
     ext {
         appName = 'GdxDialogsApp'
-        gdxVersion = '1.9.3'
-        roboVMVersion = '2.1.0'
+        gdxVersion = '1.9.4'
+        roboVMVersion = '2.2.0'
 
         gdxDialogsVersion = '1.1.1'
     }
