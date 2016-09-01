@@ -32,9 +32,8 @@ android {
 
     defaultConfig {
         applicationId "de.tomgrill.gdxdialogs.app.android"
-        minSdkVersion 15
+        minSdkVersion 9
         targetSdkVersion 23
-        multiDexEnabled false
     }
 }
 
