@@ -8,9 +8,9 @@ buildscript {
     }
     dependencies {
         classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
-        classpath 'com.android.tools.build:gradle:1.5.0'
-        classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.1.0'
-        classpath 'com.intel.gradle:moeGradlePlugin:1.1.0.final-1'
+        classpath 'com.android.tools.build:gradle:2.2.1'
+        classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.3.0'
+        classpath 'org.multi-os-engine:moe-gradle:1.2.3'
     }
 }
 
@@ -21,10 +21,10 @@ allprojects {
     version = '1.0'
     ext {
         appName = 'GdxDialogsApp'
-        gdxVersion = '1.9.3'
-        roboVMVersion = '2.1.0'
+        gdxVersion = '1.9.6-SNAPSHOT'
+        roboVMVersion = '2.3.0'
 
-        gdxDialogsVersion = '1.1.0'
+        gdxDialogsVersion = '1.2.0'
     }
 
     repositories {
@@ -108,6 +108,11 @@ project(":html") {
         compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
         compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion:sources"
+
+        compile "de.tomgrill.gdxdialogs:gdx-dialogs-html:$gdxDialogsVersion"
+        compile "de.tomgrill.gdxdialogs:gdx-dialogs-core:$gdxDialogsVersion:sources"
+        compile "de.tomgrill.gdxdialogs:gdx-dialogs-html:$gdxDialogsVersion:sources"
+
     }
 }
 
