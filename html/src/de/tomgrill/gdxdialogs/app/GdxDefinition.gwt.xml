@@ -3,8 +3,12 @@
 <module rename-to="html">
 	<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
 
+	<inherits name='de.tomgrill.gdxdialogs.html.gdx_dialogs_html' />
+	<inherits name="de.tomgrill.gdxdialogs.core.gdx_dialogs_core" />
+
 	<inherits name='GdxDialogsGame' />
 	<entry-point class='de.tomgrill.gdxdialogs.app.client.HtmlLauncher' />
-	
+
+	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>
