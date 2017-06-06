@@ -21,10 +21,10 @@ allprojects {
     version = '1.0'
     ext {
         appName = 'GdxDialogsApp'
-        gdxVersion = '1.9.6-SNAPSHOT'
+        gdxVersion = '1.9.6'
         roboVMVersion = '2.3.0'
 
-        gdxDialogsVersion = '1.2.0'
+        gdxDialogsVersion = '1.2.2-SNAPSHOT'
     }
 
     repositories {
