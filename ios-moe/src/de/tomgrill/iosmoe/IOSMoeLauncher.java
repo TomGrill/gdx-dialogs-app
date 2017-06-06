@@ -1,12 +1,11 @@
 package de.tomgrill.iosmoe;
 
+import apple.uikit.c.UIKit;
 import com.badlogic.gdx.backends.iosmoe.IOSApplication;
 import com.badlogic.gdx.backends.iosmoe.IOSApplicationConfiguration;
-import com.intel.moe.natj.general.Pointer;
 import de.tomgrill.gdxdialogs.app.GdxDialogsGame;
+import org.moe.natj.general.Pointer;
 
-import ios.foundation.NSAutoreleasePool;
-import ios.uikit.c.UIKit;
 
 public class IOSMoeLauncher extends IOSApplication.Delegate {
 
@@ -22,8 +21,6 @@ public class IOSMoeLauncher extends IOSApplication.Delegate {
     }
 
     public static void main(String[] argv) {
-        NSAutoreleasePool pool = NSAutoreleasePool.alloc();
         UIKit.UIApplicationMain(0, null, null, IOSMoeLauncher.class.getName());
-        pool.dealloc();
     }
 }
