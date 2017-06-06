@@ -24,7 +24,7 @@ allprojects {
         gdxVersion = '1.9.6'
         roboVMVersion = '2.3.1'
 
-        gdxDialogsVersion = '1.2.2-SNAPSHOT'
+        gdxDialogsVersion = '1.2.1'
     }
 
     repositories {
