@@ -112,6 +112,7 @@ public class GdxDialogsGame extends ApplicationAdapter {
 
 		textPrompt.setTitle("Your name");
 		textPrompt.setMessage("Please tell me your name.");
+		textPrompt.setMaxLength(10);
 
 		textPrompt.setCancelButtonLabel("Cancel");
 		textPrompt.setConfirmButtonLabel("Save name");
